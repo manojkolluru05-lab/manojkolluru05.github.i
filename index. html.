@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal portfolio — education, achievements, and profile.">
+<title>Personal Portfolio | Your Name</title>
+<style>
+:root{--bg:#070b18;--panel:rgba(15,23,42,.74);--line:rgba(148,163,184,.18);--text:#edf4ff;--muted:#a6b4cc;--cyan:#54e4ff;--violet:#9b8cff;--glow:0 0 32px rgba(84,228,255,.12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 15%,rgba(45,92,180,.23),transparent 33%),radial-gradient(circle at 80% 60%,rgba(104,59,190,.18),transparent 36%),linear-gradient(140deg,#070b18,#0b1225 60%,#080c19)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.13;background-image:linear-gradient(rgba(150,190,255,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(150,190,255,.2) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+a{color:inherit;text-decoration:none}.container{width:min(1100px,92%);margin:auto}.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:rgba(7,11,24,.78);border-bottom:1px solid var(--line)}.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.06em}.brand span{color:var(--cyan)}.nav-links{display:flex;gap:22px;color:var(--muted);font-size:.92rem}.nav-links a:hover{color:var(--cyan)}.menu{display:none;background:none;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:10px}
+.hero{min-height:82vh;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center;padding:75px 0 60px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.19em;font-size:.78rem;font-weight:700}.hero h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:1.05;margin:14px 0 20px;letter-spacing:-.04em}.hero h1 span{background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:600px;color:var(--muted);font-size:1.08rem}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--line);font-weight:650;transition:.2s}.btn.primary{background:linear-gradient(110deg,rgba(84,228,255,.16),rgba(155,140,255,.16));border-color:rgba(84,228,255,.45);box-shadow:var(--glow)}.btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
+.profile-card{position:relative;max-width:360px;margin:auto;width:100%;padding:26px;border:1px solid rgba(84,228,255,.3);border-radius:25px;background:linear-gradient(145deg,rgba(15,23,42,.9),rgba(13,18,38,.6));box-shadow:0 20px 60px rgba(0,0,0,.25),var(--glow)}.avatar{width:150px;height:150px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;font-size:3rem;font-weight:800;color:#06101a;background:linear-gradient(135deg,var(--cyan),var(--violet));box-shadow:0 0 35px rgba(84,228,255,.25)}.profile-card h2{text-align:center;margin:0}.profile-card .sub{text-align:center;color:var(--muted);margin:4px 0 20px}.profile-row{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:.92rem}.profile-row span:last-child{color:var(--cyan);text-align:right}
+section{padding:55px 0}.section-head{margin-bottom:28px}.section-head h2{font-size:clamp(1.8rem,4vw,2.5rem);margin:6px 0}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.12);transition:.25s}.card:hover{transform:translateY(-4px);border-color:rgba(84,228,255,.4)}.card .icon{font-size:1.5rem}.card h3{margin:8px 0}.card p,.card li{color:var(--muted)}.tag{display:inline-block;border:1px solid rgba(84,228,255,.22);color:var(--cyan);padding:4px 9px;border-radius:99px;font-size:.76rem;margin:4px 5px 0 0}.timeline{border-left:1px solid rgba(84,228,255,.35);padding-left:22px;margin-left:8px}.timeline-item{position:relative;padding:0 0 24px}.timeline-item:before{content:"";position:absolute;left:-28px;top:8px;width:10px;height:10px;background:var(--cyan);border-radius:50%;box-shadow:0 0 12px var(--cyan)}.timeline-item h3{margin:0}.timeline-item .meta{color:var(--cyan);font-size:.88rem}.timeline-item p{color:var(--muted);margin:7px 0}
+.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{background:rgba(84,228,255,.07);border:1px solid rgba(84,228,255,.18);padding:9px 13px;border-radius:11px;color:#d7eaff}
+.achievement{display:flex;gap:15px}.achievement .icon{flex-shrink:0;width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:rgba(155,140,255,.12)}
+.contact-box{text-align:center;border:1px solid rgba(84,228,255,.28);border-radius:22px;padding:35px;background:linear-gradient(120deg,rgba(84,228,255,.07),rgba(155,140,255,.08))}.contact-box p{color:var(--muted)}footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;text-align:center}
+.reveal{opacity:0;transform:translateY(15px);transition:opacity .6s,transform .6s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){.hero{grid-template-columns:1fr;min-height:auto;padding:60px 0}.hero-copy{text-align:center}.hero p{margin-inline:auto}.buttons{justify-content:center}.grid{grid-template-columns:repeat(2,1fr)}.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:rgba(7,11,24,.96);padding:18px;flex-direction:column;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.menu{display:block}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.hero h1{font-size:2.65rem}.profile-card{max-width:330px}.contact-box{padding:25px 17px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="container nav-inner">
+<a class="brand" href="#home">PORTFOLIO<span>.</span></a>
+<button class="menu" id="menuBtn" aria-label="Toggle menu">☰</button>
+<nav class="nav-links" id="navLinks"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a></nav>
+</div></header>
+<main class="container">
+<section class="hero" id="home">
+<div class="hero-copy reveal">
+<div class="eyebrow">Personal Portfolio · 2026</div>
+<h1>Hello, I'm<br><span>Your Name</span></h1>
+<p>A curious student, future professional, and lifelong learner. I enjoy exploring technology, building new skills, and turning ideas into meaningful projects.</p>
+<div class="buttons"><a class="btn primary" href="#about">Explore my profile ↘</a><a class="btn" href="#contact">Contact me</a></div>
+</div>
+<div class="profile-card reveal">
+<div class="avatar" aria-label="Initial avatar">YN</div>
+<h2>Your Name</h2><div class="sub">Student · Aspiring Professional</div>
+<div class="profile-row"><span>Education</span><span>Degree / Course</span></div>
+<div class="profile-row"><span>Location</span><span>Your City, India</span></div>
+<div class="profile-row"><span>Focus</span><span>Learning & Innovation</span></div>
+</div>
+</section>
+<section id="about"><div class="section-head reveal"><div class="eyebrow">01 / About me</div><h2>Who I am</h2><p>Introduce yourself, your interests, and the goals you're working towards.</p></div>
+<div class="grid"><article class="card reveal"><div class="icon">🧭</div><h3>My Journey</h3><p>I'm currently studying and developing a strong foundation in my chosen field. I believe every challenge is an opportunity to learn.</p></article><article class="card reveal"><div class="icon">💡</div><h3>My Interests</h3><p>Technology, problem-solving, creativity, teamwork, and discovering how ideas can make everyday life better.</p></article><article class="card reveal"><div class="icon">🎯</div><h3>My Goal</h3><p>To keep improving, gain practical experience, and build a career where I can contribute and make a positive impact.</p></article></div>
+</section>
+<section id="education"><div class="section-head reveal"><div class="eyebrow">02 / Education</div><h2>Academic background</h2><p>Add your school, college, course, years, and grades if you want to share them.</p></div>
+<div class="card reveal"><div class="timeline"><div class="timeline-item"><div class="meta">2025 – Present · Edit years</div><h3>Degree / College Name</h3><p>Course, specialization, current year or semester. Add relevant subjects, projects, or GPA/percentage (optional).</p></div><div class="timeline-item"><div class="meta">Previous years · Edit dates</div><h3>Intermediate / Higher Secondary</h3><p>School or college name · Stream / group · Grade or percentage (optional).</p></div><div class="timeline-item"><div class="meta">Previous years · Edit dates</div><h3>Secondary Education</h3><p>School name · Board · Grade or percentage (optional).</p></div></div></div>
+</section>
+<section id="skills"><div class="section-head reveal"><div class="eyebrow">03 / Skills</div><h2>Things I'm learning</h2><p>Update these tags with your real skills and interests.</p></div><div class="skills reveal"><span class="skill">Communication</span><span class="skill">Teamwork</span><span class="skill">Problem Solving</span><span class="skill">C Programming</span><span class="skill">HTML & CSS</span><span class="skill">Creative Thinking</span><span class="skill">Adaptability</span></div></section>
+<section id="achievements"><div class="section-head reveal"><div class="eyebrow">04 / Achievements</div><h2>Highlights & milestones</h2><p>Showcase awards, certificates, competitions, projects, volunteering, or personal milestones.</p></div><div class="grid"><article class="card achievement reveal"><div class="icon">🏆</div><div><h3>Achievement One</h3><p>Describe an award, competition, or accomplishment. Include year and organization.</p></div></article><article class="card achievement reveal"><div class="icon">📜</div><div><h3>Certificate / Course</h3><p>Add a course or certification you completed and the skills you gained.</p></div></article><article class="card achievement reveal"><div class="icon">🚀</div><div><h3>Project / Milestone</h3><p>Describe a project you made, a goal reached, or a contribution you are proud of.</p></div></article></div></section>
+<section id="contact"><div class="contact-box reveal"><div class="eyebrow">05 / Contact</div><h2>Let's connect</h2><p>For collaborations, opportunities, or a friendly conversation.</p><div class="buttons" style="justify-content:center"><a class="btn primary" href="mailto:your.email@example.com">Email me</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a></div><p style="font-size:.85rem">Replace the email and social links with your own.</p></div></section>
+</main>
+<footer><div class="container">© <span id="year"></span> Your Name · Built with one HTML file · Hosted on GitHub Pages</div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
